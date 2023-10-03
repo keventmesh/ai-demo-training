@@ -18,7 +18,7 @@ jobs:
 
       - name: Download model files
         run: |
-          pip install -y gsutil
+          pip install --no-input gsutil
 
       - name: Build ai-demo-upload-service
         id: build-ai-demo-upload-service
