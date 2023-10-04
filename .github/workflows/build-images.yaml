@@ -39,7 +39,7 @@ jobs:
           ls -la ./services/inference-service/v1/model
       - name: Build ai-demo-inference-service
         id: build-ai-demo-inference-service
-        run: docker build services/inference-service/v1 --file services/inference-service/v1/Dockerfile -t ai-demo-inference-service-v1${{ env.AI_DEMO_IMAGE_TAG }}
+        run: docker build services/inference-service/v1 --file services/inference-service/v1/Dockerfile -t ai-demo-inference-service-v1:${{ env.AI_DEMO_IMAGE_TAG }}
       - name: Push ai-demo-inference-service
         id: push-ai-demo-inference-service
         uses: redhat-actions/push-to-registry@v2
