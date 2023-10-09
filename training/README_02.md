@@ -166,3 +166,5 @@ brew install python@3.8 --no-binaries # do not link shit
 python3.8 -m venv /tmp/labelImg_venv
 source /tmp/labelImg_venv/bin/activate
 ```
+
+Then manually partition images in `training/TensorFlow/workspace/training_02/images/scaled` into `test` and `train` folders.
