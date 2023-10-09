@@ -240,6 +240,36 @@ python model_main_tf2.py --model_dir=models/my_ssd_resnet50_v1_fpn --pipeline_co
 cd ../../../..
 ```
 
+Once trained, upload it to Google Cloud Storage:
+```shell
+# install gsutil first
+pip install gsutil==5.26
+
+# make sure you do https://cloud.google.com/storage/docs/gsutil_install#authenticate first
+# e.g. gsutil config
+# I the following for authentication using a service account:
+# used gsutil.config -e
+# I went to the bucket and gave admin permissions to the service account on the bucket
+
+# bucket is there already
+gsutil cp -r training/TensorFlow/workspace/training_02/models/ knative-ai-demo/models/training_02
+```
+
+Export the model:
+```shell
+# copy the script to run the export
+cp training/TensorFlow/models/research/object_detection/exporter_main_v2.py training/TensorFlow/workspace/training_02/
+
+cd training/TensorFlow/workspace/training_02/
+# export the model
+python exporter_main_v2.py --input_type image_tensor --pipeline_config_path ./models/my_ssd_resnet50_v1_fpn/pipeline.config --trained_checkpoint_dir ./models/my_ssd_resnet50_v1_fpn/ --output_directory ./exported-models/training_02
+
+# upload it to Google Cloud Storage:
+gsutil cp -r training/TensorFlow/workspace/training_02/exported-models/training_02 gs://knative-ai-demo/exported-models/training_02
+
+cd ../../../..
+```
+
 
 TODO: pip freeze at the end
 TODO: also note the python version
