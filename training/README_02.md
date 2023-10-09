@@ -134,8 +134,12 @@ Important: images should have the same aspect ratio.
 - See https://github.com/sglvladi/TensorFlowObjectDetectionTutorial/issues/23
 - See https://stackoverflow.com/questions/48145456/tensorflow-object-detection-api-ssd-model-using-keep-aspect-ratio-resizer/48151450#48151450
 
-
-
-
-
-
+Create the label map:
+```shell
+cat <<EOF >>training/TensorFlow/workspace/training_02/annotations/label_map.pbtxt
+item {
+    id: 1
+    name: 'knative'
+}
+EOF
+```
