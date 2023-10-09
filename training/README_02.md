@@ -214,7 +214,31 @@ cp training/TensorFlow/workspace/training_02/pre-trained-models/ssd_resnet50_v1_
 
 Manually change the model config in `training/TensorFlow/workspace/training_02/models/my_ssd_resnet50_v1_fpn/pipeline.config`
 
+Train the model:
+```shell
+# copy the script to run the training
+cp training/TensorFlow/models/research/object_detection/model_main_tf2.py training/TensorFlow/workspace/training_02
 
+# start the training
+cd training/TensorFlow/workspace/training_02
+# this takes too much time without a GPU... I gave up on my MacBook Pro after 3.5 hours.
+# On my Mac, per-step time at step #100 was 21.8 seconds.
+# On a PC with GPU (Intel i7 10700F, Nvidia GeForce RTX 3070), per-step time at step #100 was 1.43 seconds. There's a ~15x speedup.
+# On the PC, the training took 1 hour and 15 minutes.
+python model_main_tf2.py --model_dir=models/my_ssd_resnet50_v1_fpn --pipeline_config_path=models/my_ssd_resnet50_v1_fpn/pipeline.config
+
+# sample output
+# I1009 21:57:20.599885 15148 model_lib_v2.py:708] {'Loss/classification_loss': 0.12144944,
+# 'Loss/localization_loss': 0.060100622,
+# 'Loss/regularization_loss': 0.71149987,
+# 'Loss/total_loss': 0.8930499,
+# 'learning_rate': 0.0159997}
+
+
+# KILL when you see a totalLoss < 1
+
+cd ../../../..
+```
 
 
 TODO: pip freeze at the end
