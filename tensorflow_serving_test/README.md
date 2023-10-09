@@ -30,7 +30,7 @@ https://www.tensorflow.org/tfx/serving/serving_basic
 ```shell
 # create a copy of the model in /tmp
 mkdir -p /tmp/knative01/0001
-cp -R /Users/aliok/go/src/github.com/aliok/knative-eventing-ai-demo/training/TensorFlow/workspace/training_01/exported-models/my_model/saved_model/* /tmp/knative01/0001/
+cp -R /Users/aliok/go/src/github.com/aliok/knative-eventing-ai-demo/training/TensorFlow/workspace/training_01/exported-models/training_01/saved_model/* /tmp/knative01/0001/
 tree /tmp/knative01/
 # /tmp/knative01/
 # └── 0001

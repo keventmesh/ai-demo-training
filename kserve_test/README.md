@@ -3,7 +3,7 @@ Upload the model in a way that Kserve would like to have (see https://console.cl
 
 mkdir -p kserve_test/models/knative_01/
 
-cp -R training/TensorFlow/workspace/training_01/exported-models/my_model/saved_model kserve_test/models/knative_01/0001
+cp -R training/TensorFlow/workspace/training_01/exported-models/training_01/saved_model kserve_test/models/knative_01/0001
 
 # upload to Google Cloud
 gsutil cp -r kserve_test/models/knative_01/ gs://knative-ai-demo/kserve-models/

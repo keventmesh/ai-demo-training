@@ -219,7 +219,7 @@ Once trained, upload it to Google Cloud Storage:
 # I went to the bucket and gave admin permissions to the service account on the bucket
 
 # bucket is there already
-gsutil cp -r training/TensorFlow/workspace/training_01/models/ gs://knative-ai-demo
+gsutil cp -r training/TensorFlow/workspace/training_01/models/ gs://knative-ai-demo/models/training_01/
 
 ```
 
@@ -230,10 +230,10 @@ cp training/TensorFlow/models/research/object_detection/exporter_main_v2.py trai
 
 cd training/TensorFlow/workspace/training_01/
 # export the model
-python exporter_main_v2.py --input_type image_tensor --pipeline_config_path ./models/my_ssd_resnet50_v1_fpn/pipeline.config --trained_checkpoint_dir ./models/my_ssd_resnet50_v1_fpn/ --output_directory ./exported-models/my_model
+python exporter_main_v2.py --input_type image_tensor --pipeline_config_path ./models/my_ssd_resnet50_v1_fpn/pipeline.config --trained_checkpoint_dir ./models/my_ssd_resnet50_v1_fpn/ --output_directory ./exported-models/training_01
 
 # upload it to Google Cloud Storage:
-gsutil cp -r training/TensorFlow/workspace/training_01/exported-models/ gs://knative-ai-demo
+gsutil cp -r training/TensorFlow/workspace/training_01/exported-models/training_01 gs://knative-ai-demo/exported-models/training_01
 
 cd ../../../..
 ```
@@ -273,5 +273,5 @@ gsutil cp -r gs://knative-ai-demo/models/my_ssd_resnet50_v1_fpn/ training/Tensor
 
 If you're not interested in any of the training, but you want to get the exported model:
 ```shell
-gsutil cp -r gs://knative-ai-demo/exported-models/my_model training/TensorFlow/workspace/training_01/exported-models/
+gsutil cp -r gs://knative-ai-demo/exported-models/training_01 training/TensorFlow/workspace/training_01/exported-models/
 ```

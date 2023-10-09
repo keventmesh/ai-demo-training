@@ -28,7 +28,7 @@ TEST_IMAGES = [
     "../../training/TensorFlow/workspace/training_01/images/test/photo_2023-08-08 13.26.56.jpeg",
 ]
 
-PATH_TO_SAVED_MODEL = "../../training/TensorFlow/workspace/training_01/exported-models/my_model/saved_model"
+PATH_TO_SAVED_MODEL = "../../training/TensorFlow/workspace/training_01/exported-models/training_01/saved_model"
 
 PATH_TO_LABELS = "../../training/TensorFlow/workspace/training_01/annotations/label_map.pbtxt"
 
