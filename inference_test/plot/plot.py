@@ -19,20 +19,23 @@ for gpu in gpus:
 
 SCRIPT_PATH = os.path.dirname(os.path.abspath(__file__))
 
+MODEL = os.environ.get("MODEL")
+if not MODEL:
+    print("Missing MODEL environment variable")
+    exit(1)
+
 TEST_IMAGES = [
-    "../../tensorflow_serving_test/test_small.jpeg",
-    "../../tensorflow_serving_test/test_smaller.jpeg",
-    "../../training/TensorFlow/workspace/training_01/images/test/photo_2023-08-08 13.26.49.jpeg",
-    "../../training/TensorFlow/workspace/training_01/images/test/photo_2023-08-08 13.26.52.jpeg",
-    "../../training/TensorFlow/workspace/training_01/images/test/photo_2023-08-08 13.26.53.jpeg",
-    "../../training/TensorFlow/workspace/training_01/images/test/photo_2023-08-08 13.26.56.jpeg",
+    f"test_images/photo_2023-08-08 13.26.49.jpeg",
+    f"test_images/photo_2023-08-08 13.26.52.jpeg",
+    f"test_images/photo_2023-08-08 13.26.53.jpeg",
+    f"test_images/photo_2023-08-08 13.26.56.jpeg",
 ]
 
-PATH_TO_SAVED_MODEL = "../../training/TensorFlow/workspace/training_01/exported-models/training_01/saved_model"
+PATH_TO_SAVED_MODEL = f"models/{MODEL}/saved_model"
 
-PATH_TO_LABELS = "../../training/TensorFlow/workspace/training_01/annotations/label_map.pbtxt"
+PATH_TO_LABELS = "models/label_map.pbtxt"
 
-OUTPUT_DIR = "./output"
+OUTPUT_DIR = f"./output/{MODEL}"
 
 print('Loading model...', end='')
 start_time = time.time()

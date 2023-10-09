@@ -14,4 +14,6 @@ training/TensorFlow/workspace/training_02/models
 
 training/TensorFlow/workspace/training_02/exported-models/training_02
 
+inference_test/plot/models
+
 kserve_test/models

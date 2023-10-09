@@ -2,7 +2,8 @@
 mkdir inference_test
 cd inference_test
 
-python3 -m venv .venv
+# TODO: need Python 3.8
+python3.8 -m venv .venv
 source .venv/bin/activate
 
 # install tensorflow
@@ -24,6 +25,23 @@ python -c "import object_detection;"
 cd ..
 ```
 
-Run `plot.py` and you will see:
+Download the models:
+```shell
+cd inference_test/plot/models
+gsutil cp -r gs://knative-ai-demo/exported-models/training_01 ./
+gsutil cp -r gs://knative-ai-demo/exported-models/training_02 ./
+cd ../..
+```
+
+Run the inference tests:
+```shell
+cd inference_test/plot
+MODEL="training_01" python plot.py
+# OR
+MODEL="training_02" python plot.py
+cd ../..
+``` 
+
+You will see:
 - GUI window with the image and the bounding boxes
 - Image will be saved to `inference_test/plot/` with the bounding boxes
