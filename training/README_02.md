@@ -117,3 +117,25 @@ touch workspace/training_02/pre-trained-models/.gitkeep
 
 cd ../..
 ```
+
+Put images under `training/TensorFlow/workspace/training_02/images/original` manually.
+
+Then we need to resize them:
+```shell
+cd training/TensorFlow/workspace/training_02/images
+
+python scale.py
+
+cd ../../../../..
+
+```
+
+Important: images should have the same aspect ratio.
+- See https://github.com/sglvladi/TensorFlowObjectDetectionTutorial/issues/23
+- See https://stackoverflow.com/questions/48145456/tensorflow-object-detection-api-ssd-model-using-keep-aspect-ratio-resizer/48151450#48151450
+
+
+
+
+
+
