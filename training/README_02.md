@@ -143,3 +143,26 @@ item {
 }
 EOF
 ```
+
+Install labelImg for annotating images:
+```shell
+pip install labelImg
+```
+
+Annotate images:
+```shell
+labelImg training/TensorFlow/workspace/training_02/images/scaled training/TensorFlow/workspace/training_02/annotations/label_map.pbtxt training/TensorFlow/workspace/training_02/images/scaled
+# In the tool:
+# - Change save location to training/TensorFlow/workspace/training_02/scaled/images
+# - Use class `knative`
+# - Press `w` to draw a box, `a`/`d` to go to the previous/next image
+```
+
+NOTE: if `labelImg` crashes, it might be because of this: https://github.com/HumanSignal/labelImg/issues/885
+In that case, create a new virtual environment using Python 3.8 and install `labelImg` there.
+Like:
+```shell
+brew install python@3.8 --no-binaries # do not link shit
+python3.8 -m venv /tmp/labelImg_venv
+source /tmp/labelImg_venv/bin/activate
+```
