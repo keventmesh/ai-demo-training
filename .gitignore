@@ -8,4 +8,10 @@ training/TensorFlow/workspace/training_01/models
 
 training/TensorFlow/workspace/training_01/exported-models/my_model
 
+training/TensorFlow/workspace/training_02/pre-trained-models
+training/TensorFlow/workspace/training_02/models
+!training/TensorFlow/workspace/training_02/models/pipeline.config
+
+training/TensorFlow/workspace/training_02/exported-models/my_model
+
 kserve_test/models

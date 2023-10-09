@@ -189,3 +189,18 @@ python generate_tfrecord.py -x ../../workspace/training_02/images/test  -l ../..
 cd ../../../..
 ```
 
+
+===============
+OK, TIME TO SWITCH TO WINDOWS NOW
+===============
+
+Download pre-trained model:
+```shell
+cd training/TensorFlow/workspace/training_02/pre-trained-models
+
+# download the model archive
+curl -L http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz -o model.tar.gz
+tar xvzf model.tar.gz
+
+cd ../../../../..
+```
