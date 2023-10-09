@@ -168,3 +168,24 @@ source /tmp/labelImg_venv/bin/activate
 ```
 
 Then manually partition images in `training/TensorFlow/workspace/training_02/images/scaled` into `test` and `train` folders.
+
+Create TensorFlow records:
+```shell
+pip install pandas==2.0.3
+
+# create a directory for the upcoming script
+mkdir -p training/TensorFlow/scripts/preprocessing
+cd training/TensorFlow/scripts/preprocessing
+
+# download the script to generate TFRecords
+curl -L https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/_downloads/da4babe668a8afb093cc7776d7e630f3/generate_tfrecord.py -o generate_tfrecord.py
+
+# Create train data:
+python generate_tfrecord.py -x ../../workspace/training_02/images/train -l ../../workspace/training_02/annotations/label_map.pbtxt -o ../../workspace/training_02/annotations/train.record
+
+# Create test data:
+python generate_tfrecord.py -x ../../workspace/training_02/images/test  -l ../../workspace/training_02/annotations/label_map.pbtxt -o ../../workspace/training_02/annotations/test.record
+
+cd ../../../..
+```
+
