@@ -1,0 +1,26 @@
+<annotation>
+	<folder>03_scaled</folder>
+	<filename>photo_2023-10-10 18.57.09.jpeg_r270_scaled.png</filename>
+	<path>/Users/aliok/go/src/github.com/keventmesh/ai-demo-training/training/TensorFlow/workspace/training_03/images/03_scaled/photo_2023-10-10 18.57.09.jpeg_r270_scaled.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>960</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>knative</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>253</xmin>
+			<ymin>87</ymin>
+			<xmax>437</xmax>
+			<ymax>317</ymax>
+		</bndbox>
+	</object>
+</annotation>
