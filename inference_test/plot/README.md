@@ -30,9 +30,9 @@ cd ..
 
 Download the models:
 ```shell
-cd inference_test/plot/models
-gsutil cp -r gs://knative-ai-demo/exported-models/training_01 ./
-gsutil cp -r gs://knative-ai-demo/exported-models/training_02 ./
+cd inference_test/plot
+gsutil cp -r gs://knative-ai-demo/exported-models/training_01 ./models/
+gsutil cp -r gs://knative-ai-demo/exported-models/training_02 ./models/
 cd ../..
 ```
 

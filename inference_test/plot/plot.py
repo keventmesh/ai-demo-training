@@ -125,6 +125,8 @@ for image_path in TEST_IMAGES:
 
     print("Number of detections: " + str(num_detections))
 
+    print(detections)
+
     # detection_classes should be ints.
     detections['detection_classes'] = detections['detection_classes'].astype(np.int64)
 
