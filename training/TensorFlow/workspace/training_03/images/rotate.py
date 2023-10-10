@@ -10,7 +10,7 @@ EPSILON = 0.01
 
 async def rotate(src_file):
     src_file_path = os.path.join(SRC_DIR, src_file)
-    target_file_path = os.path.join(TARGET_DIR, src_file)
+    target_file_path = os.path.join(TARGET_DIR, src_file + ".png")
     image = Image.open(src_file_path)
     width, height = image.size
 
@@ -25,6 +25,7 @@ async def rotate(src_file):
         print(f"not rotating {src_file_path}")
 
     image.save(target_file_path, "PNG")
+
 
 async def main():
     files = []

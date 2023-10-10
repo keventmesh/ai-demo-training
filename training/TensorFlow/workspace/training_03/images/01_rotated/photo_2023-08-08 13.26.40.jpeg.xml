@@ -1,7 +1,7 @@
 <annotation>
 	<folder>01_rotated</folder>
-	<filename>photo_2023-08-08 13.26.40.jpeg</filename>
-	<path>/Users/aliok/go/src/github.com/keventmesh/ai-demo-training/training/TensorFlow/workspace/training_03/images/01_rotated/photo_2023-08-08 13.26.40.jpeg</path>
+	<filename>photo_2023-08-08 13.26.40.jpeg.png</filename>
+	<path>/Users/aliok/go/src/github.com/keventmesh/ai-demo-training/training/TensorFlow/workspace/training_03/images/01_rotated/photo_2023-08-08 13.26.40.jpeg.png</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>672</xmin>
-			<ymin>162</ymin>
-			<xmax>1060</xmax>
-			<ymax>682</ymax>
+			<xmin>671</xmin>
+			<ymin>145</ymin>
+			<xmax>1057</xmax>
+			<ymax>683</ymax>
 		</bndbox>
 	</object>
 </annotation>

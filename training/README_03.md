@@ -162,9 +162,11 @@ python3.8 -m venv /tmp/labelImg_venv
 source /tmp/labelImg_venv/bin/activate
 ```
 
+Create variations of the images:
+```shell
+cd training/TensorFlow/workspace/training_03/images
 
+python augment.py
 
-
-
-
-
+cd ../../../../..
+```
