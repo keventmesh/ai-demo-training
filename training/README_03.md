@@ -178,7 +178,7 @@ labelImg training/TensorFlow/workspace/training_03/images/02_augmented training/
 
 Scale down images:
 ```shell
-cd training/TensorFlow/workspace/training_02/images
+cd training/TensorFlow/workspace/training_03/images
 
 python scale.py
 
@@ -193,9 +193,29 @@ labelImg training/TensorFlow/workspace/training_03/images/03_scaled training/Ten
 Then partition images into `test` and `train` folders:
 
 ```shell
-cd training/TensorFlow/workspace/training_02/images
+cd training/TensorFlow/workspace/training_03/images
 
 python partition.py
 
 cd ../../../../..
+```
+
+Create TensorFlow records:
+```shell
+pip install pandas==2.0.3
+
+# create a directory for the upcoming script
+mkdir -p training/TensorFlow/scripts/preprocessing
+cd training/TensorFlow/scripts/preprocessing
+
+# download the script to generate TFRecords
+curl -L https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/_downloads/da4babe668a8afb093cc7776d7e630f3/generate_tfrecord.py -o generate_tfrecord.py
+
+# Create train data:
+python generate_tfrecord.py -x ../../workspace/training_03/images/train -l ../../workspace/training_03/annotations/label_map.pbtxt -o ../../workspace/training_03/annotations/train.record
+
+# Create test data:
+python generate_tfrecord.py -x ../../workspace/training_03/images/test  -l ../../workspace/training_03/annotations/label_map.pbtxt -o ../../workspace/training_03/annotations/test.record
+
+cd ../../../..
 ```

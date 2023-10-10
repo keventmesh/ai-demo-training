@@ -14,6 +14,12 @@ training/TensorFlow/workspace/training_02/models
 
 training/TensorFlow/workspace/training_02/exported-models/training_02
 
+
+# these are too big, and they're easy to generate
+training/TensorFlow/workspace/training_03/annotations/test.record
+training/TensorFlow/workspace/training_03/annotations/train.record
+
+
 inference_test/plot/models
 
 kserve_test/models
