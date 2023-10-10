@@ -170,3 +170,23 @@ python augment.py
 
 cd ../../../../..
 ```
+
+Check if the augmented images have correct annotations:
+```shell
+labelImg training/TensorFlow/workspace/training_03/images/02_augmented training/TensorFlow/workspace/training_03/annotations/label_map.pbtxt training/TensorFlow/workspace/training_03/images/02_augmented
+```
+
+Scale down images:
+```shell
+cd training/TensorFlow/workspace/training_02/images
+
+python scale.py
+
+cd ../../../../..
+
+```
+
+Check if the resized images have correct annotations:
+```shell
+labelImg training/TensorFlow/workspace/training_03/images/03_scaled training/TensorFlow/workspace/training_03/annotations/label_map.pbtxt training/TensorFlow/workspace/training_03/images/03_scaled
+```

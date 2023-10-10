@@ -74,7 +74,7 @@ async def augment(src_file):
         if root.findall("./object/name")[0].text != "knative":
             print(f"Error: {src_xml_file_path} annotation does not contain knative")
 
-        root.findall("./object/name")[0].text = "knative"
+        # root.findall("./object/name")[0].text = "knative_augmented"
 
         new_image.save(target_file_path, "PNG")
         tree = ET.ElementTree(root)
@@ -92,7 +92,6 @@ async def main():
     async with asyncio.TaskGroup() as tg:
         for file in files:
             await tg.create_task(augment(file))
-            break
 
 
 if __name__ == '__main__':
