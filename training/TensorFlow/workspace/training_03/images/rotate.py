@@ -37,7 +37,7 @@ async def main():
 
     async with asyncio.TaskGroup() as tg:
         for file in files:
-            await tg.create_task(rotate(file))
+            tg.create_task(rotate(file))
 
 
 if __name__ == '__main__':

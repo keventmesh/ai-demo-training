@@ -71,7 +71,7 @@ async def main():
 
     async with asyncio.TaskGroup() as tg:
         for file in files:
-            await tg.create_task(scale_down(file))
+            tg.create_task(scale_down(file))
 
 
 if __name__ == '__main__':

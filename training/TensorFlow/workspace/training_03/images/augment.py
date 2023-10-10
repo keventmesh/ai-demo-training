@@ -32,7 +32,7 @@ async def augment(src_file):
         target_file_name = f"{src_file_base_name_without_ext}_r{rotation}.png"
         target_file_path = os.path.join(SCRIPT_DIR, TARGET_DIR, target_file_name)
         target_xml_file_path = os.path.join(SCRIPT_DIR, TARGET_DIR, f"{src_file_base_name_without_ext}_r{rotation}.xml")
-        print(f"Rotate {src_file_path} by {rotation} degrees")
+        print(f"Augment {src_file_path} by {rotation} degrees")
         new_image = image.rotate(rotation,
                                  expand=False)  # maintain AR of the image, even though there are black regions in the corners
 
@@ -91,7 +91,7 @@ async def main():
 
     async with asyncio.TaskGroup() as tg:
         for file in files:
-            await tg.create_task(augment(file))
+            tg.create_task(augment(file))
 
 
 if __name__ == '__main__':
