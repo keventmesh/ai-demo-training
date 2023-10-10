@@ -183,10 +183,19 @@ cd training/TensorFlow/workspace/training_02/images
 python scale.py
 
 cd ../../../../..
-
 ```
 
 Check if the resized images have correct annotations:
 ```shell
 labelImg training/TensorFlow/workspace/training_03/images/03_scaled training/TensorFlow/workspace/training_03/annotations/label_map.pbtxt training/TensorFlow/workspace/training_03/images/03_scaled
+```
+
+Then partition images into `test` and `train` folders:
+
+```shell
+cd training/TensorFlow/workspace/training_02/images
+
+python partition.py
+
+cd ../../../../..
 ```
