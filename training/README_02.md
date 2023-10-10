@@ -228,11 +228,12 @@ cd training/TensorFlow/workspace/training_02
 python model_main_tf2.py --model_dir=models/my_ssd_resnet50_v1_fpn --pipeline_config_path=models/my_ssd_resnet50_v1_fpn/pipeline.config
 
 # sample output
-# I1010 09:40:31.465977  5100 model_lib_v2.py:708] {'Loss/classification_loss': 0.0398225,
-# 'Loss/localization_loss': 0.008886474,
-# 'Loss/regularization_loss': 0.91848195,
-# 'Loss/total_loss': 0.9671909,
-# 'learning_rate': 0.03973194}
+# I1010 11:43:25.107487 16656 model_lib_v2.py:708] {'Loss/classification_loss': 0.038464013,
+# 'Loss/localization_loss': 0.005002984,
+# 'Loss/regularization_loss': 0.42029276,
+# 'Loss/total_loss': 0.46375975,
+# 'learning_rate': 0.037365858}
+
 
 
 # KILL when you see a totalLoss < 1

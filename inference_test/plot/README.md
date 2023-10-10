@@ -3,8 +3,11 @@ mkdir inference_test
 cd inference_test
 
 # TODO: need Python 3.8
-python3.8 -m venv .venv
-source .venv/bin/activate
+# python3.8 -m venv .venv
+# source .venv/bin/activate
+
+# .venv\Scripts\activate.bat
+..\training\.venv\Scripts\activate.bat
 
 # install tensorflow
 pip install --ignore-installed --upgrade tensorflow==2.5.0 matplotlib==3.6.3 pyqt5==5.15.9
